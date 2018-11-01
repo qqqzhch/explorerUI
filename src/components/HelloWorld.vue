@@ -8,6 +8,10 @@
                 <Card>
                     <div style="min-height: 200px;">
                         Content
+                        <strong>{{$t("loadbundle", {lang: lang}) }}</strong>
+                        <br/>
+                         <Button type="primary" @click="lang1">汉语</Button>
+                        <Button type="dashed" @click="lang2">英语</Button>
                     </div>
                 </Card>
         </Content>
@@ -18,6 +22,20 @@ export default {
   name: 'HelloWorld',
   props: {
     msg: String
+  },
+  methods:{
+      lang1(){
+           this.$i18n.i18next.changeLanguage('zh');
+      },
+      lang2(){
+          this.$i18n.i18next.changeLanguage('en');
+      }
+
+  },
+  data() {
+      return {
+          lang:'ahahahahaha'
+      }
   }
 }
 </script>
